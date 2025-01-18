@@ -6,3 +6,12 @@
 # слово2: количество
 #
 # Убедитесь, что слова записаны в алфавитном порядке.
+import numpy as np
+with open('task3.txt', encoding='utf-8') as f:
+    ln = f.read()
+ln = ln.lower()
+ln = ln.split()
+ln = np.array(ln)
+unic = np.unique(ln, return_counts=True)
+print(unic)
+for i in range(len(unic)):
