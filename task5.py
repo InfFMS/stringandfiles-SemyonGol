@@ -9,6 +9,9 @@
 with open('task5.txt', encoding='utf-8') as file:
     ln = file.read()
 ln = ln.split()
+for i in range(len(ln)):
+    if (ln[i])[-1] == ',' or (ln[i])[-1] == '.' or (ln[i])[-1] == '!' or (ln[i])[-1] == '?' or (ln[i])[-1] == ':':
+        ln[i] = ln[i].replace((ln[i])[-1], '')
 maxw = ln[0]
 maxv = len(ln[0])
 for i in range(len(ln) - 1):

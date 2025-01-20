@@ -11,6 +11,9 @@ with open('task3.txt', encoding='utf-8') as f:
     ln = f.read()
 ln = ln.lower()
 ln = ln.split()
+for i in range(len(ln)):
+    if (ln[i])[-1] == ',' or (ln[i])[-1] == '.' or (ln[i])[-1] == '!' or (ln[i])[-1] == '?' or (ln[i])[-1] == ':':
+        ln[i] = ln[i].replace((ln[i])[-1], '')
 ln = np.array(ln)
 unic = np.unique(ln, return_counts=True)
 words = unic[0]

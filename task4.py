@@ -10,7 +10,7 @@ while sentence != '':
     sentence = sentence.split()
     new = ''
     for i in range(len(sentence)):
-        new += sentence[i] + '_'
+        new += sentence[i] + '_' + '\n'
     with open('forth_task.txt', 'a', encoding='utf-8') as file:
         for s in [new]:
             file.write(s)

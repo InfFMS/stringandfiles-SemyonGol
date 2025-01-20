@@ -9,17 +9,13 @@ with open('task1.txt', encoding='utf-8') as f:
     ln = f.read()
 
 def st(A):
-    A = str(A.split('-'))
+    A = str(A.split('—'))
     i, n = 0, 1
     while A[i] != ']':
-        if A[i] == '\\' and A[i+1] == 'n':
+        if A[i] == '\\'  and A[i+1] == 'n':
             n += 1
         i += 1
     return n
-k = -st(ln) + 1        #Поскольку после каждой строки идёт два пробела,
-                       #а последнее слово с точкой не считается
-for i in range(len(ln)):
-    if ln[i] == ' ':
-        k += 1
+ln = ln.split
 
 print(st(ln), k, len(ln))
