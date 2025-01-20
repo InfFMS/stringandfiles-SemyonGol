@@ -13,5 +13,11 @@ ln = ln.lower()
 ln = ln.split()
 ln = np.array(ln)
 unic = np.unique(ln, return_counts=True)
-print(unic)
-for i in range(len(unic)):
+words = unic[0]
+numb = unic[1]
+lnew = ''
+for i in range(len(words)):
+    lnew = (lnew + words[i] + ': ' + str(numb[i])) + '\n'
+with open('third_task.txt', 'w', encoding='utf-8') as f:
+    for s in [lnew]:
+        f.write(s)
