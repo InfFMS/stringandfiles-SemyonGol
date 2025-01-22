@@ -6,3 +6,21 @@
 # слово2: количество
 #
 # Убедитесь, что слова записаны в алфавитном порядке.
+import numpy as np
+with open('task3.txt', encoding='utf-8') as f:
+    ln = f.read()
+ln = ln.lower()
+ln = ln.split()
+for i in range(len(ln)):
+    if (ln[i])[-1] == ',' or (ln[i])[-1] == '.' or (ln[i])[-1] == '!' or (ln[i])[-1] == '?' or (ln[i])[-1] == ':':
+        ln[i] = ln[i].replace((ln[i])[-1], '')
+ln = np.array(ln)
+unic = np.unique(ln, return_counts=True)
+words = unic[0]
+numb = unic[1]
+lnew = ''
+for i in range(len(words)):
+    lnew = (lnew + words[i] + ': ' + str(numb[i])) + '\n'
+with open('third_task.txt', 'w', encoding='utf-8') as f:
+    for s in [lnew]:
+        f.write(s)
